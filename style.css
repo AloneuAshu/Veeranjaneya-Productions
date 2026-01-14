@@ -314,15 +314,20 @@ footer p {
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.4s;
         z-index: 1000;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(15px);
         border-left: 1px solid rgba(197, 160, 89, 0.3);
+        visibility: hidden;
+        /* Ensure it's not clickable when hidden */
     }
 
     .nav-links.active {
         right: 0;
+        visibility: visible;
+        display: flex;
+        /* Force display flex when active */
     }
 
     .nav-links a {
